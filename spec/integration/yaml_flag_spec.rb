@@ -50,19 +50,27 @@ describe 'building a binary', :integration do
         },
         {
           "sha256" => "48e9dbf45ae3fdc7b491259ffb6ccf7d63049ffacbc1c0977cced095e4c2d5a2",
-          "url" => "http://apache.mirrors.tds.net/apr/apr-1.7.0.tar.gz"
+          "url" => "https://apache.osuosl.org/apr/apr-1.7.0.tar.gz"
         },
         {
           "sha256" => "ce94c7722ede927ce1e5a368675ace17d96d60ff9b8918df216ee5c1298c6a5e",
-          "url" => "http://apache.mirrors.tds.net/apr/apr-iconv-1.2.2.tar.gz"
+          "url" => "https://apache.osuosl.org/apr/apr-iconv-1.2.2.tar.gz"
         },
         {
           "sha256" => "b65e40713da57d004123b6319828be7f1273fbc6490e145874ee1177e112c459",
-          "url" => "http://apache.mirrors.tds.net/apr/apr-util-1.6.1.tar.gz"
+          "url" => "https://apache.osuosl.org/apr/apr-util-1.6.1.tar.gz"
         },
         {
           "sha256" => "0f078444fed34085bc83e27eb3439556718f50dcea275307ffb66d498bdabb8f",
           "url" => "https://github.com/zmartzone/mod_auth_openidc/releases/download/v2.3.8/mod_auth_openidc-2.3.8.tar.gz"
+        },
+	{
+          "url"=>"https://github.com/lloyd/yajl/archive/2.1.0.tar.gz",
+          "sha256"=>"3fb73364a5a30efe615046d07e6db9d09fd2b41c763c5f7d3bfb121cd5c5ac5a"
+        },
+	{
+          "url"=>"https://github.com/SpiderLabs/ModSecurity/releases/download/v2.9.7/modsecurity-2.9.7.tar.gz",
+          "sha256"=>"2a28fcfccfef21581486f98d8d5fe0397499749b8380f60ec7bb1c08478e1839"
         }
       ])
     end
@@ -76,19 +84,27 @@ describe 'building a binary', :integration do
         },
         {
           "sha256" => "48e9dbf45ae3fdc7b491259ffb6ccf7d63049ffacbc1c0977cced095e4c2d5a2",
-          "url" => "http://apache.mirrors.tds.net/apr/apr-1.7.0.tar.gz"
+          "url" => "https://apache.osuosl.org/apr/apr-1.7.0.tar.gz"
         },
         {
           "sha256" => "ce94c7722ede927ce1e5a368675ace17d96d60ff9b8918df216ee5c1298c6a5e",
-          "url" => "http://apache.mirrors.tds.net/apr/apr-iconv-1.2.2.tar.gz"
+          "url" => "https://apache.osuosl.org/apr/apr-iconv-1.2.2.tar.gz"
         },
         {
           "sha256" => "b65e40713da57d004123b6319828be7f1273fbc6490e145874ee1177e112c459",
-          "url" => "http://apache.mirrors.tds.net/apr/apr-util-1.6.1.tar.gz"
+          "url" => "https://apache.osuosl.org/apr/apr-util-1.6.1.tar.gz"
         },
         {
           "sha256" => "0f078444fed34085bc83e27eb3439556718f50dcea275307ffb66d498bdabb8f",
           "url" => "https://github.com/zmartzone/mod_auth_openidc/releases/download/v2.3.8/mod_auth_openidc-2.3.8.tar.gz"
+        },
+	{
+          "url"=>"https://github.com/lloyd/yajl/archive/2.1.0.tar.gz",
+          "sha256"=>"3fb73364a5a30efe615046d07e6db9d09fd2b41c763c5f7d3bfb121cd5c5ac5a"
+        },
+	{
+          "url"=>"https://www.modsecurity.org/tarball/2.9.3/modsecurity-2.9.3.tar.gz",
+          "sha256"=>"4192019d169d3f1dd82cc4714db6986df54c6ceb4ee1c8f253de78d1a6b62118"
         }
       ])
     end
