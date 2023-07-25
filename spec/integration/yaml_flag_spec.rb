@@ -69,8 +69,8 @@ describe 'building a binary', :integration do
           "sha256"=>"3fb73364a5a30efe615046d07e6db9d09fd2b41c763c5f7d3bfb121cd5c5ac5a"
         },
 	{
-          "url"=>"https://www.modsecurity.org/tarball/2.9.3/modsecurity-2.9.3.tar.gz",
-          "sha256"=>"4192019d169d3f1dd82cc4714db6986df54c6ceb4ee1c8f253de78d1a6b62118"
+          "url"=>"https://github.com/SpiderLabs/ModSecurity/releases/download/v2.9.7/modsecurity-2.9.7.tar.gz",
+          "sha256"=>"2a28fcfccfef21581486f98d8d5fe0397499749b8380f60ec7bb1c08478e1839"
         }
       ])
     end

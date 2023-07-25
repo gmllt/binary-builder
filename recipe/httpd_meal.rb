@@ -54,7 +54,7 @@ class YAJLRecipe < BaseRecipe
   end
 
   def url
-    "https://github.com/lloyd/yajl/archive/#{version}.tar.gz"
+    "https://github.com/lloyd/yajl/archive/tags/#{version}.tar.gz"
   end
 
   def setup_tar
@@ -80,7 +80,7 @@ class ModSecurityRecipe < BaseRecipe
   end
 
   def url
-    "https://www.modsecurity.org/tarball/#{version}/modsecurity-#{version}.tar.gz"
+    "https://github.com/SpiderLabs/ModSecurity/releases/download/v#{version}/modsecurity-#{version}.tar.gz"
   end
 
   def setup_tar
@@ -312,14 +312,14 @@ class HTTPdMeal
 
   def yajl_recipe
     @yajl_recipe ||= YAJLRecipe.new('yajl', '2.1.0', httpd_path: httpd_recipe.path,
-                                                     md5: '6887e0ed7479d2549761a4d284d3ecb0')
+                                                     md5: 'b44d3d5672555e5cb5cb0de7374e50aa')
   end
 
   def mod_security_recipe
-    @mod_security_recipe ||= ModSecurityRecipe.new('mod_security', '2.9.3', apr_path: apr_recipe.path,
+    @mod_security_recipe ||= ModSecurityRecipe.new('mod_security', '2.9.7', apr_path: apr_recipe.path,
                                                                             apr_util_path: apr_util_recipe.path,
                                                                             yajl_path: yajl_recipe.path,
                                                                             httpd_path: httpd_recipe.path,
-                                                                            sha256: '4192019d169d3f1dd82cc4714db6986df54c6ceb4ee1c8f253de78d1a6b62118')
+                                                                            sha256: '2a28fcfccfef21581486f98d8d5fe0397499749b8380f60ec7bb1c08478e1839')
   end
 end
