@@ -250,6 +250,12 @@ class HTTPdMeal
     return `git -c 'versionsort.suffix=-' ls-remote --exit-code --refs --sort='version:refname' --tags #{repo} '*.*.*' | tail -1 | cut -d/ --fields=3`.strip
   end
 
+  def latest_github_version_matching(repo, match)
+    puts "Getting latest tag from #{repo} matching #{match}..."
+    repo = "https://github.com/#{repo}"
+    return `git -c 'versionsort.suffix=-' ls-remote --exit-code --refs --sort='version:refname' --tags #{repo} '#{match}' | tail -1 | cut -d/ --fields=3`.strip
+  end
+
   def update_git
     # This is done because we rely on git's ls-remote that was introduced in 2.18.
     # cflinuxfs3/bionic comes with an older version of git.
@@ -311,11 +317,12 @@ class HTTPdMeal
   end
 
   def yajl_recipe
-    @yajl_recipe ||= YAJLRecipe.new('yajl', '2.1.0', httpd_path: httpd_recipe.path,
-                                                     md5: 'b44d3d5672555e5cb5cb0de7374e50aa')
+    yajl_version = latest_github_version_matching("lloyd/yajl", "2.*.*")
+    @yajl_recipe ||= YAJLRecipe.new('yajl', yajl_version, httpd_path: httpd_recipe.path)
   end
 
   def mod_security_recipe
+    modsecurity_version = latest_github_version_matching("SpiderLabs/ModSecurity", "v2.*.*")[1..-1]
     @mod_security_recipe ||= ModSecurityRecipe.new('mod_security', '2.9.7', apr_path: apr_recipe.path,
                                                                             apr_util_path: apr_util_recipe.path,
                                                                             yajl_path: yajl_recipe.path,

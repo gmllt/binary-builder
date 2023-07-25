@@ -4,6 +4,11 @@
 #  the deprecations are a result of Debian/Ubuntu packaging issues we cannot control
 export DEBIAN_DISABLE_RUBYGEMS_INTEGRATION=foo
 
+if [[ $(dpkg --list | grep ruby | wc -l) -eq 0 ]]; then
+  echo "Installing ruby..."
+  apt-get update
+  apt-get install -y ruby
+fi
 gem update --system --no-document -q --silent > /dev/null
 gem install bundler --no-document -f -q --silent > /dev/null
 bundle config mirror.https://rubygems.org ${RUBYGEM_MIRROR}

@@ -69,6 +69,13 @@ docker run -w /binary-builder -v `pwd`:/binary-builder \
   --version=$version --gpg-signature="${gpg_signature}"
 ```
 
+# Building httpd
+
+```
+docker run -w /binary-builder -v `pwd`:/binary-builder -it cloudfoundry/cflinuxfs4 bash
+./bin/binary-builder --name=httpd --version=2.4.57 --sha256=dbccb84aee95e095edfbb81e5eb926ccd24e6ada55dcd83caecb262e5cf94d2a
+```
+
 # Contributing
 
 Find our guidelines [here](./CONTRIBUTING.md).
